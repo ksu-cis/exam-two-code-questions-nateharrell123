@@ -7,6 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock>Customize Cobbler</TextBlock>
+        <StackPanel Orientation="Vertical">
+            <TextBlock>Customize Cobbler</TextBlock>
+            <CheckBox IsChecked="{Binding Path=WithIceCream}" Content="Ice Cream?"/>
+            <TextBlock>Fruit Filling</TextBlock>
+            <RadioButton x:Name="Peach" Content="Peach"/>
+            <RadioButton x:Name="Cherry" Content="Cherry"/>
+            <RadioButton x:Name="Blueberry" Content="Blueberry"/>
+        </StackPanel>
     </Grid>
 </UserControl>

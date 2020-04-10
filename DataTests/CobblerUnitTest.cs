@@ -72,5 +72,36 @@ namespace ExamTwoCodeQuestions.DataTests
             var cobbler = new Cobbler();
             Assert.IsAssignableFrom<IOrderItem>(cobbler);
         }
+
+
+
+        [Fact]
+        public void ChangingFruitNotifiesPropertyChanged()
+        {
+            var cobbler = new Cobbler();
+            Assert.PropertyChanged(cobbler, "Fruit", () => {
+                cobbler.Fruit = FruitFilling.Cherry;
+            });
+        }
+
+        [Fact]
+        public void ChangingIceCreamNotifiesPropertyChanged()
+        {
+            var cobbler = new Cobbler();
+            Assert.PropertyChanged(cobbler, "WithIceCream", () => {
+                cobbler.WithIceCream = false;
+            });
+        }
+
+
+        [Fact]
+        public void ChangingPriceNotifiesPropertyChanged()
+        {
+            var cobbler = new Cobbler();
+            Assert.PropertyChanged(cobbler, "Price", () => {
+                cobbler.Price = 3.141592654; 
+            });
+        }
+
     }
 }
